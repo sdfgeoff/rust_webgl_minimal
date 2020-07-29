@@ -1,0 +1,32 @@
+<html>
+<head>
+	<title>SDF Designer</title>
+</head>
+
+<link rel="stylesheet" type = "text/css" href = "style.css">
+
+<script type="module">
+import init from './core.js';
+
+window.onload=function(){
+    var core_module = init().then(function(obj){
+        var core = obj.core_new()
+        obj.core_start(core)
+    }).catch(function(e){
+        console.error("Failed to load:", e)
+    })
+}
+
+</script>
+
+<body>
+	
+<canvas id="viewport_3d" class=fullscreen></canvas>
+<div id="overlay" class=fullscreen>
+	<div class="spinner"></div>
+    
+</div>
+
+</body>
+
+</html>
